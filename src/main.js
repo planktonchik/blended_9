@@ -14,3 +14,13 @@
       <p>Текст</p>
   </li>
 */
+import { renderTask } from './js/render-tasks';
+import { handleFormSubmit, handleTaskList } from './js/markup-tasks';
+
+import { initStorage } from './js/local-storage-api';
+initStorage();
+renderTask();
+
+import refs from './js/refs';
+refs.form.addEventListener('submit', handleFormSubmit);
+refs.tasksList.addEventListener('click', handleTaskList);
